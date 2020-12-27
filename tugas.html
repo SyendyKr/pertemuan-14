@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM PENDAFTARAN MAHASISWA</title>
+</head>
+<body>
+    <script>
+		function kirim() {
+			var nama = document.getElementById("nama").value;
+            var prodi = document.getElementById("prodi").value;
+            var jk = document.querySelector('input[name="jk"]:checked').value;
+            var checkbox = document.querySelectorAll('input[name="hobby"]:checked');
+            var hobby = '';
+            for(i = 0; i < checkbox.length; i++) 
+            {
+                hobby += checkbox[i].value + ', ';
+            }
+
+            document.getElementById("nama_output").innerHTML =  nama;
+            document.getElementById("jk_output").innerHTML =  jk ;
+            document.getElementById("prodi_output").innerHTML =  prodi;
+            document.getElementById("hobby_output").innerHTML =  hobby ;
+            
+            
+
+        }
+
+    </script>
+    
+    <table align="center" border="1" cellpadding="0" cellspacing="0">
+        <tr align="center"><td><h2> <b>FORM PENDAFTARAN MAHASISWA</b></h2></td></tr>
+        <tr>
+            <td>
+                <table width="600" border="0" cellpadding="0" cellspacing="10" align="center">
+                    <tr>
+                        <td>Nama</td>
+                        <td> :</td>
+                        <td><input name="nama" type="text" size="40" id="nama" /></td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Kelamin</td>
+                        <td> : </td>
+                        <td>
+                            <input name="jk" type="radio" value="Pria" id="jk"><label for="Pria">Pria</label>
+                            <input name="jk" type="radio" value="Wanita" id="jk"><label for="Wanita">Wanita</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Prodi</td>
+                        <td> : </td>
+                        <td>
+                            <select name="prodi" id="prodi">
+                                <option value="Teknik Informatika">Teknik Informartika</option>
+                                <option value="Sistem Operasi">Sistem Operasi</option>
+                                <option valur="Akutansi">Akutansi</option>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hobby</td>
+                        <td> : </td>
+                        <td>
+                            <input name="hobby" type="checkbox" value="Coding" id="hobby"/>Coding
+                            <input name="hobby" type="checkbox" value="Jalan-Jalan" id="hobby"/>Jalan-Jalan
+                            <input name="hobby" type="checkbox" value="Makan" id="hobby"/>Makan
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" onclick="kirim()">Kirim</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+   <br>
+</br>
+
+        <table  width="600" border="0" cellpadding="0" cellspacing=10" align="center"> 
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td id="nama_output">:</td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>:</td>
+                <td id="jk_output"></td>
+            </tr>
+            <tr>
+                <td>Prodi</td>
+                <td>:</td>
+                <td id="prodi_output"></td>
+            </tr>
+            <tr>
+                <td>Hobby</td>
+                <td>:</td>
+                <td id="hobby_output"></td>
+            </tr>
+        </table>  
+
+
+            
+</body>
+</html>
